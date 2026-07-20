@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>Collections</RootNamespace>
+    <AssemblyName>Collections</AssemblyName>
+
+    <!-- LangVersion is set explicitly to make it clear we target C# 12.
+         With the .NET 8 SDK, C# 12 is the default anyway, but we spell it out. -->
+    <LangVersion>12.0</LangVersion>
+
+    <!-- ImplicitUsings (C# 10, .NET 6): automatically adds the common 'using'
+         directives (System, System.Collections.Generic, System.Linq, ...),
+         so we don't have to repeat them in every file. -->
+    <ImplicitUsings>enable</ImplicitUsings>
+
+    <!-- Nullable reference types (C# 8): the compiler warns when a null
+         could cause a NullReferenceException. -->
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>
