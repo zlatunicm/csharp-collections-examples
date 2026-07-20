@@ -10,6 +10,10 @@ namespace Collections.Examples;
 ///
 /// When to use: when you know the exact number of elements up front and want
 /// maximum speed. If the count changes -> use List<T> (example 02).
+///
+/// Complexity: access by index O(1), search O(n), "resizing" = allocating a new array.
+/// Real-world uses: I/O buffers (files, network), pixels/audio samples, lookup
+/// tables, interop with native code — and List&lt;T&gt; internally IS an array.
 /// </summary>
 public static class ArraysDemo
 {

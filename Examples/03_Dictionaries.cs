@@ -11,6 +11,14 @@ namespace Collections.Examples;
 ///
 /// When to use: when you look data up by some "key" (e.g. a user by ID,
 /// a price by product name, a count of occurrences by word...).
+///
+/// How it works inside (a favorite interview question): the key's GetHashCode()
+/// selects a "bucket"; Equals() then confirms the exact match within that bucket.
+/// That's why a key type needs correct GetHashCode/Equals and must NOT be mutated
+/// while it serves as a key (demonstrated in example 14).
+/// Complexity: lookup/insert/remove O(1) on average.
+/// Real-world uses: caches, indexes (user by ID), counters, configuration,
+/// routing tables, grouping by key.
 /// </summary>
 public static class DictionariesDemo
 {
@@ -65,6 +73,16 @@ public static class DictionariesDemo
         Helper.Heading("Keys and Values");
         Helper.Info($"Keys:   {Helper.AsText(prices.Keys)}");
         Helper.Info($"Values: {Helper.AsText(prices.Values)}");
+
+        // ── Case-insensitive keys (very common in practice) ──────────────────
+        Helper.Heading("Case-insensitive keys (StringComparer)");
+        // By default string keys are case-SENSITIVE: "Ana" and "ana" are two keys.
+        // Passing a comparer solves the classic "HTTP headers / usernames" problem:
+        var headers = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
+        {
+            ["Content-Type"] = "application/json",
+        };
+        Helper.Info($"headers[\"content-type\"]: {headers["content-type"]}  (found despite different casing)");
 
         // ── Practical example: counting word occurrences ─────────────────────
         Helper.Heading("Practical example: word counter");

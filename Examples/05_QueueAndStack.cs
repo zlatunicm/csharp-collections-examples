@@ -12,6 +12,10 @@ namespace Collections.Examples;
 /// When to use:
 ///   - Queue: processing tasks in order, messages, to-do lists by arrival order.
 ///   - Stack: undo/redo, going back, recursion without recursion, a parser.
+///
+/// Complexity: Enqueue/Dequeue/Push/Pop/Peek are all O(1).
+/// Real-world uses: BFS graph traversal uses a Queue, DFS uses a Stack; job and
+/// message queues, browser history, the call stack itself, expression parsers.
 /// </summary>
 public static class QueueAndStackDemo
 {

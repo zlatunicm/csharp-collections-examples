@@ -12,6 +12,12 @@ namespace Collections.Examples;
 ///
 /// 'yield return' (C# 2) lets us build a collection ourselves that is generated
 /// "lazily" — element by element, only when it's actually needed.
+///
+/// KEY concept — DEFERRED EXECUTION: a LINQ query is a recipe, not a result. It
+/// runs each time you enumerate it (the classic traps are shown in example 14);
+/// materialize with ToList()/ToArray() when you'll use the result more than once.
+/// Real-world: LINQ is everywhere — and with IQueryable (e.g. Entity Framework)
+/// the same Where/Select gets translated to SQL and runs inside the database.
 /// </summary>
 public static class LinqDemo
 {

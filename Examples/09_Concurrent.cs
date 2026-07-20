@@ -18,6 +18,12 @@ namespace Collections.Examples;
 ///   - BlockingCollection&lt;T&gt;      — producer/consumer scenarios.
 ///
 /// When to use: as soon as several threads (Task, Parallel, async workers) share a collection.
+///
+/// Caution (a frequent interview trap): thread-safe METHODS don't make a SEQUENCE
+/// of calls atomic — 'if (!d.ContainsKey(k)) d[k] = v;' is still a race condition;
+/// use the atomic GetOrAdd / AddOrUpdate / TryXxx methods instead.
+/// Real-world uses: in-memory caches (GetOrAdd), producer/consumer pipelines,
+/// collecting results from Parallel.ForEach.
 /// </summary>
 public static class ConcurrentDemo
 {

@@ -12,6 +12,11 @@ namespace Collections.Examples;
 ///
 /// When to use: rarely. In 95% of cases List&lt;T&gt; is the better choice. A LinkedList
 /// makes sense with FREQUENT inserting/removing in the middle of a large collection.
+///
+/// Why List usually still wins (a good interview answer): array elements sit next
+/// to each other, which the CPU cache loves; linked nodes are scattered across the
+/// heap — so the "O(1) insert" often loses to List's O(n) copy in practice.
+/// Real-world use: an LRU cache = LinkedList (usage order) + Dictionary (fast lookup).
 /// </summary>
 public static class LinkedListDemo
 {

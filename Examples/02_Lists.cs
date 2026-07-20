@@ -11,6 +11,11 @@ namespace Collections.Examples;
 ///
 /// "Generic" collections (List&lt;T&gt;, Dictionary&lt;,&gt; ...) arrived in C# 2 (2005).
 /// Before that there were only untyped ones (ArrayList) which are NOT used today.
+///
+/// Complexity: index O(1), Add at the end amortized O(1), Insert/RemoveAt in the
+/// middle O(n), Contains/IndexOf O(n) — for frequent "does it exist?" checks use
+/// a HashSet (example 04); the difference is measured in example 15.
+/// Real-world uses: the default "bag of items" — query results, DTOs, view models.
 /// </summary>
 public static class ListsDemo
 {

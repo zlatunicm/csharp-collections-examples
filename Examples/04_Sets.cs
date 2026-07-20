@@ -14,6 +14,10 @@ namespace Collections.Examples;
 ///
 /// When to use: when all you care about is "is it in / not in" and you want to
 /// avoid duplicates, or for mathematical set operations (union, intersection, difference).
+///
+/// Complexity: HashSet Contains/Add/Remove O(1) average; SortedSet O(log n).
+/// Real-world uses: deduplication, "already visited/processed" bookkeeping, tags,
+/// permission sets, fast allow/deny lists.
 /// </summary>
 public static class SetsDemo
 {

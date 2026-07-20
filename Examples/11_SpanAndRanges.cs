@@ -15,6 +15,10 @@ namespace Collections.Examples;
 ///
 /// When to use: processing large arrays/texts where you want to avoid needless
 /// copies for the sake of performance (parsing, a network buffer, and so on).
+///
+/// Real-world uses: high-performance parsing (int.TryParse accepts a span),
+/// slicing network/file buffers, stackalloc scratch buffers — this technique is
+/// behind many of the big performance wins inside .NET itself.
 /// </summary>
 public static class SpanAndRangesDemo
 {

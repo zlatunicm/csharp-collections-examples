@@ -25,6 +25,8 @@ var demos = new (string Title, Action Method)[]
     ("11 — Index, Range and Span<T>",             SpanAndRangesDemo.Run),
     ("12 — Frozen collections (.NET 8)",          FrozenDemo.Run),
     ("13 — IEnumerable, yield and LINQ",          LinqDemo.Run),
+    ("14 — Common pitfalls",                      PitfallsDemo.Run),
+    ("15 — Choosing & performance (Big-O)",       ChoosingAndPerformanceDemo.Run),
 };
 
 // If a number was passed as an argument (e.g. `dotnet run 3`), run only that

@@ -20,6 +20,12 @@ namespace Collections.Examples;
 ///
 /// When to use: when you want to guarantee that nobody can accidentally change
 /// your data (e.g. configuration, sharing between threads).
+///
+/// Good to know: a "changed" immutable collection shares most of its memory with
+/// the previous version (structural sharing), so it's cheaper than full copying.
+/// Real-world uses: configuration snapshots, Redux-style app state, public APIs
+/// that must not let callers mutate internals — the C# compiler itself (Roslyn)
+/// is built on immutable collections.
 /// </summary>
 public static class ImmutableDemo
 {

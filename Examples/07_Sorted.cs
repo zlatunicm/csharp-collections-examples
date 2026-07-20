@@ -16,6 +16,10 @@ namespace Collections.Examples;
 ///                    Good when you ADD/REMOVE often.
 ///
 /// For comparison: a plain Dictionary&lt;,&gt; has NO order, but is the fastest for lookup.
+///
+/// Complexity: lookup by key O(log n) in both (SortedList insert/remove O(n)).
+/// Real-world uses: leaderboards, price tiers, range queries ("everything between
+/// X and Y"), any output that must stay sorted by key while it keeps changing.
 /// </summary>
 public static class SortedDemo
 {

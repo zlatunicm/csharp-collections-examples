@@ -17,6 +17,10 @@ namespace Collections.Examples;
 ///
 /// When to use: constant "lookup" tables loaded at application startup
 /// (e.g. mappings, permissions, configuration) that get checked often.
+///
+/// Real-world uses: HTTP method/route tables, country and currency code maps,
+/// feature flags, reserved keyword sets — build once in a static field,
+/// read for the lifetime of the process.
 /// </summary>
 public static class FrozenDemo
 {

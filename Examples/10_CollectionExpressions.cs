@@ -8,6 +8,11 @@ namespace Collections.Examples;
 /// compiler picks the right way to build it based on the TARGET type (target-typed).
 ///
 /// It also includes the "spread" operator '..' which "pours" one collection into another.
+///
+/// Good to know: the compiler picks the most efficient way to build the target
+/// type (often better than hand-written 'new' + Add), so [ ... ] isn't just
+/// prettier — it's at least as fast. In modern codebases it replaces
+/// 'new[] { ... }' and 'new List&lt;T&gt; { ... }' almost everywhere.
 /// </summary>
 public static class CollectionExpressionsDemo
 {
